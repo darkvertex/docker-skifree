@@ -8,10 +8,10 @@ The classic 90s game [**SkiFree**](https://en.wikipedia.org/wiki/SkiFree) runnin
 
 ## How to Run
 
-You need to pass your `$DISPLAY` env var, match your user ID and patch through the X socket, like this:
+To run the [Dockerhub image](https://hub.docker.com/r/alanf/skifree-wine), you will need to pass your `$DISPLAY` env var, match your user ID and mount your X socket, like so:
 
 ```bash
-docker run -it --rm -e DISPLAY=$DISPLAY --user `id -u` -v="/tmp/.X11-unix:/tmp/.X11-unix" skifree-wine
+docker run -it --rm -e DISPLAY=$DISPLAY --user `id -u` -v="/tmp/.X11-unix:/tmp/.X11-unix" alanf/skifree-wine
 ```
 
 ## Which version of the game is this?
