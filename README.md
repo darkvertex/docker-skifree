@@ -4,7 +4,7 @@
 
 The classic 90s game [**SkiFree**](https://en.wikipedia.org/wiki/SkiFree) running in [WINE](https://www.winehq.org) via X from your host Linux system.
 
-![The Yeti that eats you.](images/skifree_yeti_gobble.gif)
+![The Yeti that eats you.](https://github.com/darkvertex/docker-skifree/raw/master/images/skifree_yeti_gobble.gif)
 
 ## How to Run
 
@@ -26,11 +26,11 @@ Kidding aside, unlike the original from Windows 3.1 (that you can still run [in 
 
 Here it is running in my laptop's high-DPI display at glorious 1792x1696 resolution:
 
-![start screen](images/skifree_hd_screenshot1.png)
+![start screen](https://github.com/darkvertex/docker-skifree/raw/master/images/skifree_hd_screenshot1.png)
 
 and in action:
 
-![skiing](images/skifree_hd_screenshot2.png)
+![skiing](https://github.com/darkvertex/docker-skifree/raw/master/images/skifree_hd_screenshot2.png)
 
 ## Can I escape the Yeti?!
 
