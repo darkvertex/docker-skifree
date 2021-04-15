@@ -48,6 +48,31 @@ You're on Windows?? Dude, you don't need WINE.. You don't even need Docker!
 
 Just run the actual [executable](http://ski.ihoc.net/ski32.exe).
 
+## But I love WSL (Windows Subsystem for Linux), can I run this there anyway? You know, for science!
+
+Okay, sure. Just remember **WSL1 and WSL2 don't have GPU acceleration** so don't expect great framerates.
+
+1. You can install an X server, such as "[GWSL](https://www.microsoft.com/en-us/p/gwsl/9nl6kd1h33v3)" (free from the Windows Store.)
+
+2. Once it's running, add this to your `~/.bashrc` to expose your `DISPLAY`:
+```shell
+# WSL [Windows Subsystem for Linux] customizations:
+if [[ $(grep microsoft /proc/version) ]]; then
+    # If we are here, we are under WSL:
+    if [ $(grep -oE 'gcc version ([0-9]+)' /proc/version | awk '{print $3}') -gt 5 ]; then
+        # WSL2
+        [ -z $DISPLAY ] && export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
+    else
+        # WSL1
+        [ -z $DISPLAY ] && export DISPLAY=127.0.0.1:0.0
+    fi
+fi
+```
+3. Log out and back in from a fresh terminal.
+4. X forwarding should work now. Go on and try `xeyes` or the full skifree command from the top of this README.
+
+If you succeeded, good job! You now made a 32bit Windows exe run in a Linux container from inside a Linux Windows subsystem. (You crazy maniac, you!)
+
 ## But really, why did you make this?
 
 I was reading about X forwarding in Docker containers and wanted to put it to practice.
